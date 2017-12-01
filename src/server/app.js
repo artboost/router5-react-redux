@@ -2,7 +2,7 @@ import React from 'react';
 
 import render from './render';
 
-import App from '../shared/App';
+import App from '../app/containers/App/index';
 
 const reactApp = (req, res) => {
   const dom = (

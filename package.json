@@ -17,7 +17,11 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "react-router5": "^5.4.0",
+    "redux": "^3.7.2",
+    "redux-router5": "^5.2.0",
+    "router5": "^5.7.0",
+    "router5-helpers": "^5.1.0"
   },
   "devDependencies": {
     "autoprefixer": "7.1.0",
@@ -115,13 +119,6 @@
       "ecmaFeatures": {
         "jsx": true
       }
-    },
-    "globals": {
-      "Stripe": true,
-      "ga": true,
-      "swal": true,
-      "fbq": true,
-      "$": true
     },
     "rules": {
       "arrow-body-style": [

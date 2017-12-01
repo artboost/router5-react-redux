@@ -8,19 +8,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import { RouterProvider } from 'react-router5';
+
 import App from './containers/App';
 
-const Root = ({ store, children }) => (
+const Root = ({ router, store, children }) => (
   <Provider store={store}>
-    <div>
-      { children }
+    <RouterProvider router={router}>
+      <div>
+        { children }
 
-      <App />
-    </div>
+        <App />
+      </div>
+    </RouterProvider>
   </Provider>
 );
 
 Root.propTypes = {
+  router: PropTypes.object.isRequired,
   store: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
 };

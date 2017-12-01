@@ -1,34 +1,29 @@
-import Main from '../containers/Main';
-import Parent from '../containers/Parent';
-import Child from '../components/Child';
-import ChildParent from '../components/ChildParent';
-import Grandchild from '../components/Grandchild';
-
+/* eslint-disable no-undef */
 export default [
   {
     path: '/',
     name: 'main',
-    component: Main,
+    loadComponent: () => System.import('../containers/Main'),
   },
   {
     path: '/parent',
     name: 'parent',
-    component: Parent,
+    loadComponent: () => System.import('../containers/Parent'),
     children: [
       {
         path: '/child',
         name: 'child',
-        component: Child,
+        loadComponent: () => System.import('../components/Child'),
       },
       {
         path: '/childParent',
         name: 'childParent',
-        component: ChildParent,
+        loadComponent: () => System.import('../components/ChildParent'),
         children: [
           {
             path: '/child',
             name: 'grandChild',
-            component: Grandchild,
+            loadComponent: () => System.import('../components/Grandchild'),
           },
         ],
       },

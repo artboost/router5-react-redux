@@ -1,15 +1,15 @@
-import express from 'express'
-import path from 'path'
-import proxy from 'http-proxy-middleware'
+import express from 'express';
+import path from 'path';
+import proxy from 'http-proxy-middleware';
 
-import reactApp from './app'
+import reactApp from './app';
 
-const host = process.env.REACT_APP_HOST || 'localhost'
-const serverPort = process.env.NODE_ENV === 'development'?
+const host = process.env.REACT_APP_HOST || 'localhost';
+const serverPort = process.env.NODE_ENV === 'development' ?
   process.env.REACT_APP_SERVER_PORT :
-  process.env.REACT_APP_PORT || 80
+  process.env.REACT_APP_PORT || 80;
 
-const app = express()
+const app = express();
 
 if (process.env.NODE_ENV === 'production') {
   // In production we want to serve our JavaScripts from a file on the file
@@ -17,16 +17,16 @@ if (process.env.NODE_ENV === 'production') {
   app.use('/static', express.static(path.join(process.cwd(), 'build/client/static')));
 } else {
   // Otherwise we want to proxy the webpack development server.
-  app.use(['/static','/sockjs-node'], proxy({
+  app.use(['/static', '/sockjs-node'], proxy({
     target: `http://localhost:${process.env.REACT_APP_CLIENT_PORT}`,
     ws: true,
-    logLevel: 'error'
+    logLevel: 'error',
   }));
 }
 
-app.use('/', express.static('build/client'))
+app.use('/', express.static('build/client'));
 
-app.use(reactApp)
+app.use(reactApp);
 
-app.listen(serverPort)
-console.log(`Listening at http://${host}:${serverPort}`)
+app.listen(serverPort);
+console.log(`Listening at http://${host}:${serverPort}`);

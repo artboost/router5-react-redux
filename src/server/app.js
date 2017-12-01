@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-import render from './render'
+import render from './render';
 
-import App from '../shared/App'
+import App from '../shared/App';
 
 const reactApp = (req, res) => {
-  const HTML = render(
+  const dom = (
     <App>
       <small
         style={{
@@ -18,7 +18,8 @@ const reactApp = (req, res) => {
       </small>
     </App>
   );
-  res.status(200).send(HTML)
+  const HTML = render(dom);
+  res.status(200).send(HTML);
 };
 
-export default reactApp
+export default reactApp;

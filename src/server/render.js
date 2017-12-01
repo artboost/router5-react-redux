@@ -10,7 +10,7 @@ const css = DEV ?
   '' : // in DEV the css is hot loaded
   `<link href="/${assetManifest['main.css']}" media="all" rel="stylesheet" />`;
 
-export default (component) => `
+export default component => `
   <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -27,4 +27,4 @@ export default (component) => `
         <script type="application/javascript" src="${bundleUrl}"></script>
       </body>
   </html>
-`
+`;

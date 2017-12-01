@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from '../app/containers/App/index';
+import registerServiceWorker from './registerServiceWorker';
+import configureStore from '../app/redux/index';
+
+import Root from '../app';
 import './index.css';
 
-import registerServiceWorker from './registerServiceWorker';
+// Init redux
+const initialState = window.APP_STATE;
+const store = configureStore(initialState);
 
+// Render
 ReactDOM.render(
-  <App>
+  <Root store={store}>
     <small
       style={{
         display: 'block',
@@ -17,7 +23,7 @@ ReactDOM.render(
     >
       client-side
     </small>
-  </App>,
+  </Root>,
   document.getElementById('root')
 );
 

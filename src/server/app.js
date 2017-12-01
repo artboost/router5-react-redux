@@ -2,11 +2,14 @@ import React from 'react';
 
 import render from './render';
 
-import App from '../app/containers/App/index';
+import Root from '../app';
+import configureStore from '../app/redux/index';
 
 const reactApp = (req, res) => {
-  const dom = (
-    <App>
+  const store = configureStore({});
+
+  const app = (
+    <Root store={store}>
       <small
         style={{
           display: 'block',
@@ -16,9 +19,10 @@ const reactApp = (req, res) => {
       >
         server-side
       </small>
-    </App>
+    </Root>
   );
-  const HTML = render(dom);
+
+  const HTML = render(app, store.getState());
   res.status(200).send(HTML);
 };
 

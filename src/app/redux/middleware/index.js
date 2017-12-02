@@ -6,7 +6,8 @@ export function createMiddleware(router) {
     router5Middleware(router),
   ];
 
-  if (process.env.NODE_ENV !== 'production') {
+  // Use logger in dev, client-side
+  if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined') {
     middleware.push(logger);
   }
   return middleware;

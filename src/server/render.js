@@ -36,8 +36,8 @@ export default (app, state) => {
           {app}
         </div>
 
-        <script type="application/javascript" src={bundleUrl} />
         <script dangerouslySetInnerHTML={{ __html: `APP_STATE = ${htmlescape(state)}` }} />
+        <script type="application/javascript" src={bundleUrl} />
       </body>
     </html>
   ));

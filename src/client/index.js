@@ -6,15 +6,10 @@ import configureStore from '../app/redux/index';
 
 import Root from '../app';
 
-// TODO: Initial state is undefined on initial load, for some reason. Figure out why, and fix!
-// Init redux
-const initialState = window.APP_STATE;
-
 const router = configureRouter();
-const store = configureStore(router, initialState);
+const store = configureStore(router, window.APP_STATE);
 
-// TODO: Navigate using initial state.
-router.start('/', () => {
+router.start(store.getState().router.route, () => {
   ReactDOM.render(
     <Root router={router} store={store}>
       <small

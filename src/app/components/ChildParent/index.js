@@ -1,7 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-const ChildParent = () => (
-  <div>This component is a child, and it has children.</div>
+import Link from '../../components/Link';
+
+import childRouteSelector from '../../redux/selectors/childRoute';
+
+const ChildParent = ({ childRoute }) => (
+  <div>
+    This component has one child.
+
+    <div>
+      {
+        childRoute
+        ||
+        <Link routeName="parent.childParent.grandChild">
+          Click here to navigate to it.
+        </Link>
+      }
+    </div>
+  </div>
 );
 
-export default ChildParent;
+ChildParent.propTypes = { childRoute: PropTypes.node };
+
+export default connect(childRouteSelector('parent.childParent'))(ChildParent);

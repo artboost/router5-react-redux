@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Grandchild = () => (
-  <div>
+  <small>
     This component is the child of a child; the grandchild of Parent.
-  </div>
+  </small>
 );
 
 export default Grandchild;

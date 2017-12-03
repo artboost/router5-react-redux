@@ -1,4 +1,4 @@
-# react-redux-router5
+# router5-react-redux
 Bootstrapped using [Universal Create React App](https://github.com/leanjscom/universal-create-react-app)
 
 ## Purpose

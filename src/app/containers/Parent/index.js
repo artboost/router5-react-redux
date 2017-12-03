@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router5';
+import Link from '../../components/Link';
 
 import childRouteSelector from '../../redux/selectors/childRoute';
 
@@ -22,6 +22,7 @@ const Parent = ({ childRoute }) => (
           border: '1px solid #222',
           padding: 5,
         }}
+        activeStyle={{ fontWeight: '800' }}
         routeName="parent.child"
       >
         Child
@@ -33,6 +34,7 @@ const Parent = ({ childRoute }) => (
           border: '1px solid #222',
           padding: 5,
         }}
+        activeStyle={{ fontWeight: '800' }}
         routeName="parent.childParent"
       >
         Child with parent

@@ -20,6 +20,7 @@
     "react-router5": "^5.4.0",
     "redux": "^3.7.2",
     "redux-router5": "^5.2.0",
+    "reselect": "^3.0.1",
     "router5": "^5.7.0",
     "router5-helpers": "^5.1.0"
   },

@@ -6,12 +6,12 @@ import Root from '../app';
 import registerServiceWorker from './registerServiceWorker';
 
 import configureStore from '../app/redux/index';
-import { configureRouter } from '../app/router';
+import { configureRouter, startRouter } from '../app/router';
 
 const router = configureRouter();
 const store = configureStore(router, window.APP_STATE);
 
-router.start(store.getState().router.route, () => {
+const render = () => {
   ReactDOM.render(
     <Root router={router} store={store}>
       <small
@@ -26,6 +26,8 @@ router.start(store.getState().router.route, () => {
     </Root>,
     document.getElementById('root')
   );
-});
+};
+
+startRouter(router, store.getState().router.route).then(render);
 
 registerServiceWorker();

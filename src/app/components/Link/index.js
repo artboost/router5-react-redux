@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { BaseLink, withRoute } from 'react-router5';
+import { startsWithSegment } from 'router5-helpers';
 
 const Link = ({ route, routeName, style = {}, activeStyle = {}, children }) => (
   <BaseLink
     routeName={routeName}
     style={
-      route.name === routeName
+      startsWithSegment(route.name, routeName)
         ? { ...style, ...activeStyle }
         : style
     }

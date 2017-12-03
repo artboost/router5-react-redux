@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { configureRouter } from '../app/router';
-
-import configureStore from '../app/redux/index';
 
 import Root from '../app';
+
+import registerServiceWorker from './registerServiceWorker';
+
+import configureStore from '../app/redux/index';
+import { configureRouter } from '../app/router';
 
 const router = configureRouter();
 const store = configureStore(router, window.APP_STATE);
@@ -25,3 +27,5 @@ router.start(store.getState().router.route, () => {
     document.getElementById('root')
   );
 });
+
+registerServiceWorker();

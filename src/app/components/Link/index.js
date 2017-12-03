@@ -17,7 +17,7 @@ const Link = ({ route, routeName, style = {}, activeStyle = {}, children }) => (
 );
 
 Link.propTypes = {
-  route: PropTypes.string,
+  route: PropTypes.object,
   routeName: PropTypes.string.isRequired,
   style: PropTypes.object,
   activeStyle: PropTypes.object,

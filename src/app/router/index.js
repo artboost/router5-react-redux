@@ -8,7 +8,7 @@ import routes from './routes';
 
 export function configureRouter() {
   const router = createRouter(routes, {
-    defaultRoute: 'main',
+    defaultRoute: '404',
     trailingSlash: true,
     strictQueryParams: true,
   }).usePlugin(browserPlugin({ useHash: false }))

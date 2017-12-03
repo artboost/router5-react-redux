@@ -29,4 +29,10 @@ export default [
       },
     ],
   },
+  {
+    path: '/404',
+    name: '404',
+    status: 404,
+    loadComponent: () => System.import('../containers/NotFound'),
+  },
 ];

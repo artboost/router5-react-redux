@@ -1,28 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router5';
 import childRouteSelector from '../../redux/selectors/childRoute';
 
 const App = ({ childRoute }) => (
-  <div className="App">
-    <div>
-      <h1>React, Redux and router5.</h1>
-      <a
-        href="https://github.com/leanjscom/universal-create-react-app"
-        target="_blank"
+  <div>
+    <div
+      style={{
+        padding: '10px 0',
+      }}
+    >
+      <Link
+        style={{
+          border: '1px solid #222',
+          padding: 5,
+        }}
+        routeName="main"
       >
-        Bootstrapped using <strong>Universal Create React App</strong>
-      </a>
-    </div>
+        Main
+      </Link>
 
-
-    <div>
-      <h2>
-        Purpose
-      </h2>
-      <div>
-        Demonstrate router5 in an isomorphic React app, with Redux.
-      </div>
+      <Link
+        style={{
+          marginLeft: 5,
+          border: '1px solid #222',
+          padding: 5,
+        }}
+        routeName="parent"
+      >
+        Parent
+      </Link>
     </div>
 
     <div style={{ border: '1px solid black', padding: 5 }}>

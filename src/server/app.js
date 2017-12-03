@@ -1,10 +1,11 @@
 import React from 'react';
+
+import Root from '../app';
+
+import configureStore from '../app/redux';
 import { configureRouter } from '../app/router';
 
 import render from './render';
-
-import Root from '../app';
-import configureStore from '../app/redux/index';
 
 const reactApp = (req, res) => {
   const router = configureRouter();
@@ -25,8 +26,11 @@ const reactApp = (req, res) => {
   );
 
   router.start(req.url, () => {
-    const HTML = render(app, store.getState());
-    res.status(200).send(HTML);
+    const state = store.getState();
+    const HTML = render(app, state);
+
+    const { router: { route: { status } } } = state;
+    res.status(status).send(HTML);
   });
 };
 

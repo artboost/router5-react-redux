@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable no-undef,global-require */
 export default [
   {
     path: '/',
@@ -28,6 +28,12 @@ export default [
         ],
       },
     ],
+  },
+  {
+    path: '/async?base',
+    name: 'async',
+    prefetch: require('../containers/Async/prefetch'),
+    loadComponent: () => System.import('../containers/Async'),
   },
   {
     path: '/404',

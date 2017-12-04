@@ -23,7 +23,7 @@ const asyncDataLoader = routes => (router, dependencies) => (toState, fromState)
   return Promise
     .all(prefetches)
     .then((data) => {
-      const routeData = data.reduce((acc, rData) => ({ ...acc, rData }), toState.data || {});
+      const routeData = data.reduce((acc, rData) => ({ ...acc, ...rData }), toState.data || {});
       return { ...toState, data: routeData };
     });
 };

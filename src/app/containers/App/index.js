@@ -31,6 +31,18 @@ const App = ({ childRoute }) => (
       >
         Parent
       </Link>
+
+      <Link
+        style={{
+          marginLeft: 5,
+          border: '1px solid #222',
+          padding: 5,
+        }}
+        activeStyle={{ fontWeight: '800' }}
+        routeName="async"
+      >
+        Async
+      </Link>
     </div>
 
     <div style={{ border: '1px solid black', padding: 5 }}>

@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import proxy from 'http-proxy-middleware';
+import 'isomorphic-fetch';
 
 import reactApp from './app';
 

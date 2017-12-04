@@ -9,7 +9,7 @@ Demonstrate router5 in an isomorphic React app, with Redux.
 
   The resulting data becomes part props.route.data. It can be mapped to the props via the HOC withData, which handles lifecycle functions as well.
   
-* Simplified child route rendering, with child routes being mapped to the props of parents.
+* Simplified child route rendering, with child routes being added to the props of their parents, ```props.childRoute```.
 
   This is similar to how react-router handles child routes via ```props.children```
   

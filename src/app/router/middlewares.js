@@ -1,3 +1,4 @@
+import { startLoading, stopLoading } from '../redux/reducers/loading/actions';
 /* eslint-disable no-restricted-syntax */
 import { getActivatedRoutes } from './utils';
 
@@ -20,10 +21,12 @@ const asyncDataLoader = routes => (router, dependencies) => (toState, fromState)
       .filter(route => (!!route && !!route.prefetch))
       .map(route => route.prefetch(toState, dependencies.store));
 
+  dependencies.store.dispatch(startLoading());
   return Promise
     .all(prefetches)
     .then((data) => {
       const routeData = data.reduce((acc, rData) => ({ ...acc, ...rData }), toState.data || {});
+      dependencies.store.dispatch(stopLoading());
       return { ...toState, data: routeData };
     });
 };

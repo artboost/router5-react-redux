@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import LoadingOverlay from '../../components/LoadingOverlay';
 import Link from '../../components/Link';
 
 import childRouteSelector from '../../redux/selectors/childRoute';
 
 const App = ({ childRoute }) => (
   <div>
+    <LoadingOverlay />
     <div style={{ padding: '10px 0' }}>
       <Link
         style={{

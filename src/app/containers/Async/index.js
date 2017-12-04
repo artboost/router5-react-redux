@@ -17,7 +17,7 @@ const Async = ({ rates }) => (
           Object
             .keys(rates)
             .map(currency => (
-              <div>
+              <div key={currency}>
                 <code>
                   { currency }: { rates[currency] }
                 </code>

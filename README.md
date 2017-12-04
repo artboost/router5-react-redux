@@ -2,7 +2,7 @@
 Bootstrapped using [Universal Create React App](https://github.com/leanjscom/universal-create-react-app)
 
 ## Purpose
-Demonstrate router5 in an isomorphic React app, with Redux.
+Demonstrate **[router5](https://github.com/router5/router5)** in an isomorphic React app, with Redux.
 
 We are new to router5, and if you have any feedback, we would greatly appreciate it!
 

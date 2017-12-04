@@ -4,6 +4,8 @@ Bootstrapped using [Universal Create React App](https://github.com/leanjscom/uni
 ## Purpose
 Demonstrate router5 in an isomorphic React app, with Redux.
 
+We are new to router5, and if you have any feedback, we would greatly appreciate it!
+
 ## Key router5-related features
 * Transition-blocking async data loading, via middleware.
 

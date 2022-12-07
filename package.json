@@ -11,7 +11,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "dependencies": {
-    "express": "^4.15.3",
+    "express": "^4.17.3",
     "htmlescape": "^1.1.1",
     "isomorphic-fetch": "2.2.1",
     "prop-types": "^15.6.0",
